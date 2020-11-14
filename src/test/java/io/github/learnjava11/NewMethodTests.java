@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -28,6 +30,18 @@ public class NewMethodTests {
 		String content = Files.readString(Path.of("src/test/resources/file.txt"));
 		content.lines().forEach(line -> {
 			assertTrue(line.startsWith("This is line"));
+		});
+	}
+
+	@Test
+	public void testCollectionFactoryMethods() {
+		List<String> list = List.of("A", "B", "C");
+		Set<String> set = Set.of("A", "B", "C");
+		Map<String, String> map = Map.of("A", "a", "B", "b", "C", "c");
+
+		list.forEach(entry -> {
+			assertTrue(set.contains(entry));
+			assertEquals(entry.toLowerCase(), map.get(entry));
 		});
 	}
 }
