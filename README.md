@@ -1,6 +1,8 @@
 Learn Java 11
 =============
 
+[![Continuous Integration](https://github.com/mpuening/learn-java11/actions/workflows/ci.yml/badge.svg)](https://github.com/mpuening/learn-java11/actions/workflows/ci.yml)
+
 This project contains test cases that I made for me to learn some of the new Java 11 
 (and 9 & 10) features.
 
